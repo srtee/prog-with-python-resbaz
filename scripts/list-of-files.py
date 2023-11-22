@@ -37,3 +37,14 @@ plot_my_csv("../data/inflammation-02.csv","my-graph-number-2.png")
 plot_my_csv(output_filename="graph3.png",input_filename="../data/inflammation-03.csv")
 # once there is one named argument
 # you cannot mix in "positional" arguments (arguments with no default)
+
+# %% get a list of file names
+
+import glob
+
+filelist = glob.glob("../data/inf*.csv")
+# get all files matching "../data/inf{ANY PATTERN, INCLUDING NO CHARACTERS}.csv"
+
+print(filelist)
+
+# %% repeat operation for list of file names
