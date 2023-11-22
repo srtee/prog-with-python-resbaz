@@ -47,4 +47,52 @@ filelist = glob.glob("../data/inf*.csv")
 
 print(filelist)
 
+filelist2= glob.glob("../data/*.csv")
+print(filelist2)
+
 # %% repeat operation for list of file names
+
+for file in filelist:
+    # now the variable "file" inside this loop
+    # will be each of the "filelist" entries
+    # one by one
+    print(file)
+    print("this was an entry")
+    
+# %% make all plots!!
+
+# please clear plot window first for maximum fun
+
+for file in filelist:
+    plot_my_csv(file)
+    
+# %% variation 1: save graph to output PNGs
+
+for file in filelist:
+    plot_my_csv(file, file+"-output.png")
+    
+# for example file "../data/inflammation-01.csv"
+# output will be "../data/inflammation-01.csv-output.png"
+
+# %% variation 2: enumerate
+
+for number, file in enumerate(filelist):
+    print(number, file)
+# enumerate will give you both the list entry
+# and its number
+
+# %% save graphs with properly numbered output PNGs
+
+#for number, file in enumerate(filelist):
+#    plot_my_csv(file, "output"+(number+1)+".png")
+
+# for example file "../data/inflammation-01.csv"
+# number will be 0, (number+1) will be 1
+# output will be "output1.png"
+# but this version doesn't work because
+# "number+1" is still a number, not a string
+
+for number, file in enumerate(filelist):
+    plot_my_csv(file, "output"+str(number+1)+".png")
+    
+# "str" changes number to string
