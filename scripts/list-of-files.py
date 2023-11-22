@@ -96,3 +96,12 @@ for number, file in enumerate(filelist):
     plot_my_csv(file, "output"+str(number+1)+".png")
     
 # "str" changes number to string
+
+# %% enumerate start from 1 with fixed string length
+
+for number, file in enumerate(filelist, 1):
+    print(f'{number:02}', file)
+    
+# enumerate(LIST, x) makes the first entry x
+# f'{number:02}' makes it output as a string of length *2*,
+# with "0s" for left-padding
